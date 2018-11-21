@@ -31,6 +31,9 @@ $('#form').bootstrapValidator({
           min: 2,
           max: 6,
           message: '用户名长度必须在2到6之间'
+        },
+        callback: {
+          message:'用户名不存在'
         }
       }
     },
@@ -45,6 +48,9 @@ $('#form').bootstrapValidator({
           min: 6,
           max: 12,
           message: '用户名长度必须在6到12之间'
+        },
+        callback: {
+          message:'密码错误'
         }
       }
     }
@@ -74,10 +80,15 @@ $('#form').bootstrapValidator({
            location.href = 'index.html';
          }
          if(info.error===1000){
-           alert(info.message);
+           //用户名不存在
+           //参数1：字段名称
+           //参数2：校验状态
+           //配置规则，用于提示
+           $('#form').data('bootstrapValidator').updateStatus('username','INVALID','callback');
          }
          if(info.error===1001){
-          alert(info.message);
+          //密码错误
+          $('#form').data('bootstrapValidator').updateStatus('password','INVALID','callback');
         }
          
        }
