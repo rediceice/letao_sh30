@@ -140,3 +140,6 @@ ul {
   width: 48%;
   height: 400px;
 }
+#paginator {
+  float: right;
+}

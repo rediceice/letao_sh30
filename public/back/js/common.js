@@ -1,5 +1,8 @@
 
-$(function(){
+
+
+
+
 
   // NProgress.start();
 
@@ -22,7 +25,7 @@ $(function(){
     NProgress.done();
   })
 
-})
+
 
 
 //左侧二级切换
