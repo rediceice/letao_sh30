@@ -85,10 +85,12 @@ $(function(){
     //e：事件对象
     //data：图片上传后的对象，通过data.result.picAddr可以获取上传后的图片地址
     done:function (e, data) {
-      console.log(data);
-      $('#imgbox img').attr('src',data.result.picAddr);
+      // console.log(data);
+      var result =data.result.picAddr;
+  
+      $('#imgbox img').attr('src',result);
       //将图片地址赋值给隐藏域
-      $('[name="brandLogo"]').val(data.result.picAddr);
+      $('[name="brandLogo"]').val(result);
       $('#form').data("bootstrapValidator").updateStatus( "brandLogo", "VALID" );
     }
 });
@@ -147,18 +149,19 @@ $(function(){
 
         // 关闭模态框
         $('#twoModal').modal("hide");
-        // 重置表单里面的内容和校验状态
-        $('#form').data("bootstrapValidator").resetForm( true );
+        
 
         // 重新渲染第一页
         currentPage = 1;
         render();
-
+        
+        // 重置表单里面的内容和校验状态
+        $('#form').data("bootstrapValidator").resetForm( true );
         // 找到下拉菜单文本重置
-        $('#dropdownText').text("请选择1级分类")
+        $('.tt').text("请选择1级分类")
 
         // 找到图片重置
-        $('#imgBox img').attr("src", "images/none.png")
+        $('#imgbox img').attr("src", "./images/default.png")
       }
     })
   })

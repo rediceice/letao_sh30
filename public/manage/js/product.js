@@ -80,7 +80,7 @@ $(function() {
     // 存的时候, data-id,
     // 取的时候, 直接 $(this).data("id") 不需要加上 前面的 data-
     var id = $(this).data("id");
-
+   console.log(id);
     $('#dropdownText').text( txt );
     // 设置隐藏域
     $('[name="brandId"]').val(id);
